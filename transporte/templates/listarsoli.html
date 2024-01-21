@@ -1,0 +1,41 @@
+{% extends 'base.html' %}{% block content %}
+    {% load static %}
+    {% load crispy_forms_tags %}
+    <form method="get" action="{% url 'listar_solicitud' %}">
+        <div class="form-group" style="margin-top: 10px;">
+            <input type="text" class="form-control" name="codigo_seguimiento" placeholder="Buscar por Código de Seguimiento">
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Buscar</button>
+    </form>
+    <table class="table table-md-responsive" style="margin-top: 10px;">
+        <thead class="thead-light">
+        <tr>
+            <th>Código de Seguimiento</th>
+            <th>Persona Origen</th>
+            <th>Dirección Origen</th>
+            <th>Persona Destino</th>
+            <th>Dirección Destino</th>
+            <th>Descripción</th>
+            <th>Estado</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for s in solicitudes %}
+            <tr>
+                <td>{{ s.codigo_seguimiento }}</td>
+                <td>{{ s.persona_origen }}</td>
+                <td>{{ s.direccion_origen }}</td>
+                <td>{{ s.persona_destino }}</td>
+                <td>{{ s.direccion_destino }}</td>
+                <td>{{ s.descripcion }}</td>
+                <td>{{ s.estado }}</td>
+                <td>
+                    <a href="{% url 'modificar_solicitud' s.codigo_seguimiento %}" class="btn btn-primary">Modificar Estado</a>
+                </td>
+            </tr>
+            {% empty %}
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,54 @@
+body, html {
+    height: 99%;
+    margin: 0;
+}
+body {
+    background-image: url('../img/cargafacil.png');
+    background-size: cover; /* Cubre todo el espacio disponible */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center center; /* Centra la imagen en la página */
+    font-family: Arial, sans-serif;
+}
+.input-group {
+    display: flex; /* Usa flexbox para mantener los elementos alineados */
+}
+
+.form-control {
+    border-top-right-radius: 0; /* Remueve el borde redondeado superior derecho */
+    border-bottom-right-radius: 0; /* Remueve el borde redondeado inferior derecho */
+}
+
+.btn-primary {
+    border-top-left-radius: 0; /* Remueve el borde redondeado superior izquierdo */
+    border-bottom-left-radius: 0; /* Remueve el borde redondeado inferior izquierdo */
+}
+
+/* Estilos personalizados */
+.tracking-card {
+    background: #fff3cd; /* Color de fondo claro */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); /* Sombra sutil */
+}
+
+.tracking-header {
+    font-size: 1.2rem; /* Tamaño de letra más grande para los títulos */
+    color: #000000; /* Color de letra más oscuro para contraste */
+    margin-bottom: 10px;
+}
+.tracking-info {
+    font-size: 1rem;
+    color: #000000; /* Color de letra suave */
+}
+/* Responsive design for smaller devices */
+@media (max-width: 768px) {
+    #trackingForm {
+        margin-top: 20px;
+    }
+}
+@media (max-width: 768px) {
+    #trackingResult {
+        margin-top: 20px;
+    }
+}

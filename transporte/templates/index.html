@@ -1,0 +1,34 @@
+{% extends 'base.html' %}{% block content %}
+    {% load static %}
+    {% load crispy_forms_tags %}
+    <div class="container mt-5" id="trackingForm">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="container mt-5 row">
+                    <h2 class="display-4">CargaFacil</h2>
+                </div>
+                <form method="post" action="">
+                    <div class="mb-3">
+                        {% csrf_token %}
+                        <h4 class=""><label for="codigo_seguimiento" class="form-label">Ve el estado de tu producto</label><h4>
+                        <div class="input-group">
+                        <input type="text" class="form-control" name="codigo_seguimiento" id="codigo_seguimiento" placeholder="Ingresa el código del pedido">
+                        <button type="submit" class="btn btn-light"id="miBoton"><img src="{% static 'app/img/icons8-lupa-50.png' %}" alt="Mi imagen"></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div id="resultado">
+    {% if resultados %}
+    <div class="container mt-6">
+        <div class="col-md-6">
+            <ul class="list-group">
+                <li class="list-group-item">Nombre: {{ resultados.persona_origen }}</li>
+                <li class="list-group-item">Codigo: N° {{ resultados.codigo_seguimiento }}</li>
+                <li class="list-group-item">Estado: {{ resultados.get_estado_display }}</li>
+            </ul>
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}

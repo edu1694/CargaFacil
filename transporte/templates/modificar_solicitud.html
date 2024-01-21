@@ -1,0 +1,24 @@
+{% extends 'base.html' %}{% block content %}
+    {% load static %}
+    {% load crispy_forms_tags %}
+    <div class="container">
+        <h2>Modificar Estado de la Solicitud</h2>
+        <form method="post">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="codigoSeguimiento">Código de Seguimiento</label>
+            <input type="text" class="form-control" id="codigoSeguimiento" value="{{ solicitud.codigo_seguimiento }}" readonly>
+          </div>
+          <div class="form-group">
+            <label for="estado">Estado</label>
+            <select class="form-control" id="estado" name="estado">
+              {% for codigo, nombre in ESTADOS_CHOICES %}
+              <option value="{{ codigo }}" {% if solicitud.estado == codigo %}selected{% endif %}>{{ nombre }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <br>
+          <button type="submit" class="btn btn-success">Guardar Cambios</button>
+        </form>
+      </div>
+{% endblock %}
