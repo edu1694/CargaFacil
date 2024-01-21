@@ -1,5 +1,3 @@
-Claro, te puedo proporcionar una guía para la instalación de Django y los paquetes mencionados. Aquí tienes un resumen paso a paso:
-
 ### Guía de Instalación de Django y Paquetes Relacionados para CargaFacil
 
 #### Requisitos Previos
