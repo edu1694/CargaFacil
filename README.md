@@ -31,6 +31,10 @@
 
 - Para verificar que todo esté instalado correctamente, puedes ejecutar el servidor de desarrollo de Django con `python manage.py runserver` y verificar que no hay errores.
 
+#### Administrator
+User: Eduardo
+Password: 1694
+
 #### Documentación Adicional
 
 - Para más detalles, consulta la documentación oficial de cada paquete:
